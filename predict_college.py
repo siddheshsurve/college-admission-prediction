@@ -33,7 +33,8 @@ def app():
 
     #Input form
     st.header('Enter Student Details : ')
-    percentile = st.slider('Percentile', 0, 100, 50)
+    # percentile = st.slider('Percentile', 30.00, 100.00, 50.00)
+    percentile = st.number_input('Percentile : ', min_value=30.0, max_value=100.0, value=50.0, step=0.1)
     branch = st.selectbox('Branch', ['computer science and engineering', 'civil engineering', 'electronics and telecommunication engg', 'information technology', 'mechanical engineering'])
     gender = st.selectbox('Gender', ['f', 'm'])
     category = st.selectbox('Category', ['open', 'obc', 'sbc', 'sc', 'st'])
@@ -64,4 +65,5 @@ def app():
         decode_predictions = decode_predictions(encoded_predictions, encoded_features['college_name'])
 
         #Show predictions
-        st.write('Predicted College Name: ', decode_predictions[0])
+        
+        st.write('Predicted College Name:', decode_predictions[0].title())
