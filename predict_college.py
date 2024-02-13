@@ -6,16 +6,16 @@ import pickle
 def app():
     st.title("College Admission Predictor : \n\n")
 
-    # #Loading the trained model
-    # with open('decision_tree_classifier.pkl', 'rb') as file:
-    #     model = pickle.load(file)
+    #Loading the trained model
+    with open('dt_classifier.pkl', 'rb') as file:
+        model = pickle.load(file)
     
-    # #Loading the label encoders and decoders
-    # with open('encoded_features.pkl', 'rb') as file:
-    #     encoded_features = pickle.load(file)
+    #Loading the label encoders and decoders
+    with open('encoded_feat.pkl', 'rb') as file:
+        encoded_features = pickle.load(file)
 
-    model = pickle.load(open('decision_tree_classifier.sav', 'rb'))
-    encoded_features = pickle.load(open('encoded_features.sav', 'rb'))
+    # model = pickle.load(open('decision_tree_classifier.sav', 'rb'))
+    # encoded_features = pickle.load(open('encoded_features.sav', 'rb'))
     
 
     #Function to encode input data
