@@ -50,6 +50,7 @@ def app():
             'gender': [gender],
             'category': [category],
             'secondary_seat_type': [seat_type],
+            'score_type': [score_type],
             'city': [city]
         })
 
