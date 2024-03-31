@@ -17,7 +17,7 @@ def app() :
         st.header("Developer 1")
         st.markdown("**Name:** Siddhesh Surve")
         st.markdown("**Email:** [sysurve24@gmail.com](mailto:sysurve24@gmail.com)")
-        st.markdown("**Contact Number:** +91 83903 44586")
+        st.markdown("**Contact Number:** +91 8390344586")
         st.markdown("**College Name:** Pune Institute of Computer Technology")
 
     with col2:
