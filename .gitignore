@@ -5,3 +5,4 @@ encoded_features.sav
 dt_classifier.pkl
 encoded_feat.pkl
 college_data.csv
+rfmodel.pkl

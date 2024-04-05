@@ -65,5 +65,6 @@ def app():
         decode_predictions = decode_predictions(encoded_predictions, encoded_features['college_name'])
 
         #Show predictions
-        
         st.write('Predicted College Name:', decode_predictions[0].title())
+
+        
