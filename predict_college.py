@@ -2,6 +2,8 @@ import streamlit as st
 import numpy as np 
 import pandas as pd
 import pickle
+import joblib
+
 
 def app():
     st.title("College Admission Predictor : \n\n")
@@ -13,6 +15,11 @@ def app():
     #Loading the label encoders and decoders
     with open('encoded_feat.pkl', 'rb') as file:
         encoded_features = pickle.load(file)
+    
+    #Loading trained Random Forest model with  
+    with open('rfmodel.pkl', 'rb') as file:
+        rfmodel = joblib.load(file)
+
 
     # model = pickle.load(open('decision_tree_classifier.sav', 'rb'))
     # encoded_features = pickle.load(open('encoded_features.sav', 'rb'))
@@ -59,7 +66,8 @@ def app():
         encoded_input = encode_input_data(input_data, encoded_features)
 
         #Make Prediction
-        encoded_predictions = model.predict(encoded_input)
+        # encoded_predictions = model.predict(encoded_input)
+        encoded_predictions = rfmodel.predict(encoded_input)
 
         #Decode Prediction
         decode_predictions = decode_predictions(encoded_predictions, encoded_features['college_name'])
