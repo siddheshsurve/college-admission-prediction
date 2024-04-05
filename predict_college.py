@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np 
+import matplotlib.pyplot as plt
 import pandas as pd
 import pickle
 import joblib
@@ -73,6 +74,34 @@ def app():
         decode_predictions = decode_predictions(encoded_predictions, encoded_features['college_name'])
 
         #Show predictions
-        st.write('Predicted College Name:', decode_predictions[0].title())
+        # st.write('Predicted College Name:', decode_predictions[0].title())
+
+        # Make predictions for the encoded_input_data using trained Random Forest Model
+        encoded_predictions_proba_rf = rfmodel.predict_proba(encoded_input)
+        top_5_indices_rf = encoded_predictions_proba_rf.argsort()[:, -5:][0]
+        top_5_college_labels_rf = [list(encoded_features['college_name'].keys())[idx] for idx in top_5_indices_rf]
+        top_5_probabilities_rf = encoded_predictions_proba_rf[0][top_5_indices_rf]
+        top_5_probabilities_perc_rf = top_5_probabilities_rf*100
+
+        #Descending order
+        top_5_college_labels_rf = top_5_college_labels_rf[::-1]
+        top_5_probabilities_perc_rf = top_5_probabilities_perc_rf[::-1]
+
+        top_5_college_labels_rf = [label.title() for label in top_5_college_labels_rf]
+
+        #Display top 5 predicted colleges and their probabilities
+        st.write("Top 5 Predicted Colleges and Probabilities:")
+        for college, probability in zip(top_5_college_labels_rf, top_5_probabilities_perc_rf):
+            st.write(f"- {college}: {probability:.2f}%")
+
+        
+        # Create a pie chart 
+        fig, ax = plt.subplots(figsize=(25, 25), facecolor='black')
+        ax.pie(top_5_probabilities_perc_rf, labels=top_5_college_labels_rf, autopct='%1.1f%%', startangle=90, textprops={'color': 'white', 'fontsize': 25})
+        ax.axis('equal')
+        plt.title('Top 5 Predicted Colleges\n\n\n', color='white', fontsize=30)
+        st.pyplot(fig)
+
+
 
         
