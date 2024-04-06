@@ -1,14 +1,13 @@
+# contact.py
 import streamlit as st 
 import pandas as pd
-def app() :
-    # st.title("Contact Us")
 
-    # st.text('Call us on : 8390344586 / 9850365380 / 9730448100')
-    # st.text('Mail us at : sysurve24@gmail.com / srtekade2797@gmail.com / tandalesamarth@gmail.com')
-
+def app():
     st.title("Contact Us")
 
-    st.title("Contact Us")
+    # Display username if logged in
+    if st.session_state.get('logged_in', False):
+        st.write(f"Logged in as: {st.session_state.username}")
 
     # Developer 1 and 2
     col1, col2 = st.columns(2)
@@ -43,4 +42,3 @@ def app() :
         st.markdown("**Email:** [mnarnaware17@gmail.com](mailto:mnarnaware17@gmail.com)")
         st.markdown("**Contact Number:** +91 90214 58965")
         st.markdown("**College Name:** Pune Institute of Computer Technology")
-

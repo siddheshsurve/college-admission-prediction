@@ -7,6 +7,10 @@ import joblib
 
 
 def app():
+    st.sidebar.title("User")
+    if st.session_state.get('logged_in', False):
+        st.sidebar.write(f"Logged in as: {st.session_state.username}")
+    
     st.title("College Admission Predictor : \n\n")
 
     #Loading the trained model
