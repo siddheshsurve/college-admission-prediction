@@ -21,7 +21,7 @@ def app():
 
     with col2:
         st.header("Developer 2")
-        st.markdown("**Name:** Jane Smith")
+        st.markdown("**Name:** Saurabh Tekade")
         st.markdown("**Email:** [srtekade2797@gmail.com](mailto:srtekade2797@gmail.com)")
         st.markdown("**Contact Number:** +91 98503 65380")
         st.markdown("**College Name:** Pune Institute of Computer Technology")
@@ -31,14 +31,14 @@ def app():
 
     with col3:
         st.header("Developer 3")
-        st.markdown("**Name:** Alice Johnson")
+        st.markdown("**Name:** Samarth Tandale")
         st.markdown("**Email:** [tandalesamarth@gmail.com](mailto:tandalesamarth@gmail.com)")
         st.markdown("**Contact Number:** +91 97304 48100")
         st.markdown("**College Name:** Pune Institute of Computer Technology")
 
     with col4:
         st.header("Developer 4")
-        st.markdown("**Name:** Bob Brown")
+        st.markdown("**Name:** Monu Narnaware")
         st.markdown("**Email:** [mnarnaware17@gmail.com](mailto:mnarnaware17@gmail.com)")
         st.markdown("**Contact Number:** +91 90214 58965")
         st.markdown("**College Name:** Pune Institute of Computer Technology")

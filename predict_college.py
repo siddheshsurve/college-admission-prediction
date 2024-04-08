@@ -22,8 +22,8 @@ def app():
         encoded_features = pickle.load(file)
     
     #Loading trained Random Forest model with  
-    with open('rfmodel.pkl', 'rb') as file:
-        rfmodel = joblib.load(file)
+    with open('rfmodel1.pkl', 'rb') as file:
+        rfmodel1 = joblib.load(file)
 
 
     # model = pickle.load(open('decision_tree_classifier.sav', 'rb'))
@@ -72,7 +72,7 @@ def app():
 
         #Make Prediction
         # encoded_predictions = model.predict(encoded_input)
-        encoded_predictions = rfmodel.predict(encoded_input)
+        encoded_predictions = rfmodel1.predict(encoded_input)
 
         #Decode Prediction
         decode_predictions = decode_predictions(encoded_predictions, encoded_features['college_name'])
@@ -81,7 +81,7 @@ def app():
         # st.write('Predicted College Name:', decode_predictions[0].title())
 
         # Make predictions for the encoded_input_data using trained Random Forest Model
-        encoded_predictions_proba_rf = rfmodel.predict_proba(encoded_input)
+        encoded_predictions_proba_rf = rfmodel1.predict_proba(encoded_input)
         top_5_indices_rf = encoded_predictions_proba_rf.argsort()[:, -5:][0]
         top_5_college_labels_rf = [list(encoded_features['college_name'].keys())[idx] for idx in top_5_indices_rf]
         top_5_probabilities_rf = encoded_predictions_proba_rf[0][top_5_indices_rf]
