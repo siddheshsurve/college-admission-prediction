@@ -91,9 +91,9 @@ def app():
         top_5_college_labels_rf = top_5_college_labels_rf[::-1]
         top_5_probabilities_perc_rf = top_5_probabilities_perc_rf[::-1]
 
-        top_5_college_labels_rf = [label.title() for label in top_5_college_labels_rf]
+        top_5_college_labels_rf = [f"{i + 1}) {label.title()}" for i, label in enumerate(top_5_college_labels_rf)]
 
-        #Display top 5 predicted colleges and their probabilities
+        # Display top 5 predicted colleges and their probabilities
         st.write("Top 5 Predicted Colleges and Probabilities:")
         for college, probability in zip(top_5_college_labels_rf, top_5_probabilities_perc_rf):
             st.write(f"- {college}: {probability:.2f}%")
