@@ -9,7 +9,7 @@ def app():
 
     st.markdown("<h1 style='text-align: center;'>Welcome to <span style='color : violet'>FindMyCollege</span></h1>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
-    image = Image.open('cap-bg.png')
+    image = Image.open('home_bg.png')
     st.image(image, '')
 # home.py
 # import streamlit as st

@@ -5,6 +5,7 @@ import about, account, home, predict_college, contact
 
 st.set_page_config(
     page_title = "FindMyCollege - College Admission Predictor",
+    page_icon= "fevicon_main.png"
 )
 
 class MultiApp:
