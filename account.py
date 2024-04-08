@@ -17,6 +17,10 @@ def signup():
             with open("users.txt", "a") as file:
                 file.write(f"{username}:{password}\n")
             st.success("Account created successfully! Please login.")
+            # Clear the text inputs
+            username = ""
+            password = ""
+            confirm_password = ""
         else:
             st.error("Passwords do not match.")
 
@@ -31,6 +35,9 @@ def login():
             # Set session state to indicate user is logged in
             st.session_state.logged_in = True
             st.session_state.username = username  # Store username in session state
+            # Clear the text inputs
+            username = ""
+            password = ""
             # Redirect to other pages or perform other actions
         else:
             st.error("Invalid username or password")
