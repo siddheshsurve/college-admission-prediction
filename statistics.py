@@ -6,28 +6,6 @@ def app() :
 
     df = pd.read_csv("college_data.csv")
 
-    # st.title("Top 5 Branch Distribution")
-
-    # # Branch names and counts
-    # branches = ['COMP', 'ENTC', 'MECH', 'IT', 'ELECTRICAL']
-    # counts = [18655, 15173, 12788, 9542, 8026]
-
-    # # Create a DataFrame for visualization
-    # df = pd.DataFrame({'Branch': branches, 'Count': counts})
-
-    # # Display the data
-    # st.write("Here's the distribution of the top 5 branches with the highest counts:")
-    # st.write(df)
-
-    # # Create a bar chart
-    # plt.figure(figsize=(10, 6))
-    # plt.bar(df['Branch'], df['Count'], color='skyblue')
-    # plt.xlabel('Branch')
-    # plt.ylabel('Count')
-    # plt.title('Top 5 Branch Distribution')
-    # plt.xticks(rotation=45, ha='right')
-    # st.pyplot()
-
     st.title("Top 5 Branch Distribution")
 
     # Branch names and counts
@@ -69,8 +47,3 @@ def app() :
 
     # Display the pie chart
     st.pyplot(fig)
-
-
-    
-
-
